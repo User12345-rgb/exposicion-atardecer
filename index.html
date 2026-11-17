@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposición Artística</title>
+ 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            background: #f5f0e8;
+            color: #3d3028;
+            font-family: Georgia, serif;
+            line-height: 1.7;
+        }
+ 
+        header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+ 
+        header .etiqueta {
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            color: #96765e;
+        }
+ 
+        header h1 {
+            font-size: clamp(38px, 7vw, 75px);
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+ 
+        header p {
+            max-width: 600px;
+            color: #766456;
+            margin-bottom: 30px;
+        }
+ 
+        .portada {
+            width: 90%;
+            max-width: 1000px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+ 
+        nav {
+            position: sticky;
+            top: 0;
+            background: #eee5d9;
+            padding: 15px;
+            text-align: center;
+            z-index: 10;
+            border-bottom: 1px solid #d8c9b8;
+        }
+ 
+        nav a {
+            color: #4c3a2d;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+        }
+ 
+        nav a:hover {
+            color: #a47750;
+        }
+ 
+        section {
+            padding: 85px 20px;
+            max-width: 1050px;
+            margin: auto;
+        }
+ 
+        .subtitulo {
+            color: #a17c5d;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+ 
+        h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+ 
+        .texto {
+            font-size: 17px;
+            color: #5c4d42;
+            text-align: justify;
+        }
+ 
+        .fotografia {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+ 
+        .bienvenida {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+ 
+        .equipo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+ 
+        .integrante {
+            background: #eee5d9;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 4px;
+        }
+ 
+        .integrante h3 {
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+ 
+        .integrante p {
+            font-size: 14px;
+            color: #766456;
+        }
+ 
+        .audios {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+ 
+        .audio {
+            background: #eee5d9;
+            padding: 25px;
+            border-radius: 4px;
+        }
+ 
+        .audio h3 {
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+ 
+        audio {
+            width: 100%;
+        }
+ 
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #e9dfd2;
+            color: #766456;
+            font-size: 13px;
+        }
+ 
+        @media (max-width: 700px) {
+            .portada {
+                height: 280px;
+            }
+ 
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+                font-size: 12px;
+            }
+ 
+            .equipo {
+                grid-template-columns: 1fr;
+            }
+ 
+            h2 {
+                font-size: 30px;
+            }
+ 
+            section {
+                padding: 60px 22px;
+            }
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <!-- PORTADA -->
+    <header>
+        <div class="etiqueta">EXPOSICIÓN ARTÍSTICA</div>
+ 
+        <h1>El atardecer</h1>
+ 
+        <p>
+            Una mirada diferente a nuestro entorno,
+            nuestras experiencias y la realidad que nos rodea.
+        </p>
+ 
+        <img src="imagenes/foto1.png"
+             alt="Fotografía principal de la exposición"
+             class="portada">
+    </header>
+ 
+    <!-- MENÚ -->
+    <nav>
+        <a href="#bienvenida">Bienvenida</a>
+        <a href="#obra">Nuestra obra</a>
+        <a href="#equipo">Integrantes</a>
+        <a href="#audios">Audios</a>
+    </nav>
+ 
+    <!-- BIENVENIDA -->
+    <section id="bienvenida">
+        <div class="bienvenida">
+            <div class="subtitulo">BIENVENIDOS</div>
+ 
+            <h2>Gracias por visitar nuestra exposición</h2>
+ 
+            <p class="texto">
+                Te invitamos a conocer nuestra propuesta artística,
+                una fotografía que busca transmitir emociones,
+                despertar preguntas y hacernos reflexionar sobre
+                el entorno en el que vivimos.
+                Esperamos que esta experiencia te permita observar
+                la realidad desde una perspectiva diferente.
+            </p>
+        </div>
+    </section>
+ 
+    <!-- FOTOGRAFÍA Y SIGNIFICADO -->
+    <section id="obra">
+        <div class="subtitulo">NUESTRA OBRA</div>
+ 
+        <h2>Una pausa en medio del caos</h2>
+ 
+        <img src="imagenes/foto1.png"
+             alt="Tres personas observando la ciudad"
+             class="fotografia">
+ 
+        <div class="texto">
+ 
+            <p>
+                Para nosotros, esta fotografía representa la necesidad
+                de hacer una pausa y reflexionar en medio del ritmo
+                acelerado de la vida moderna. La imagen muestra a tres
+                personas observando una gran ciudad desde un puente
+                durante el atardecer. Como equipo, buscamos capturar
+                el contraste entre la tranquilidad del cielo al
+                anochecer y el caos que existe en la vida cotidiana.
+                Desde las categorías del arte, consideramos que
+                pertenece a las artes visuales, específicamente a la
+                fotografía artística, porque utiliza una imagen para
+                transmitir ideas y emociones.
+            </p>
+ 
+            <br>
+ 
+            <p>
+                La fotografía fue tomada desde un puente peatonal
+                elevado, aprovechando la luz dorada y un poco brumosa
+                de la puesta de sol. En el paisaje se observa el
+                tráfico de vehículos en las autopistas y los puentes
+                elevados, además de edificios y anuncios luminosos.
+                Desde la filosofía del arte, podemos relacionar
+                nuestra fotografía con John Dewey, quien consideraba
+                el arte como una experiencia que conecta al ser humano
+                con su entorno. De esta manera, la imagen no solo
+                muestra una ciudad, sino también una realidad que
+                vivimos diariamente.
+            </p>
+ 
+            <br>
+ 
+            <p>
+                Las tres personas que aparecen de espaldas representan
+                a la sociedad, que se detiene a observar y reflexionar
+                sobre la ciudad que ha construido. También podemos
+                relacionar la fotografía con la fenomenología de
+                Edmund Husserl, que estudia cómo las personas perciben
+                e interpretan lo que las rodea. Por eso, buscamos
+                transmitir asombro, melancolía y reflexión ante
+                problemas como la contaminación y el congestionamiento
+                vial. Nuestro mensaje es una invitación a detenernos,
+                pensar en el impacto de nuestro estilo de vida y buscar
+                un equilibrio más humano y sostenible con nuestro entorno.
+            </p>
+ 
+        </div>
+    </section>
+ 
+    <!-- INTEGRANTES -->
+    <section id="equipo">
+        <div class="subtitulo">QUIÉNES SOMOS</div>
+ 
+        <h2>Integrantes del equipo</h2>
+ 
+        <div class="equipo">
+ 
+            <div class="integrante">
+                <h3>Scott De Los Rios Salinas</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo: CDIA-305</p>
+            </div>
+ 
+            <div class="integrante">
+                <h3>José Emiliano Gómez Ramírez</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo: CDIA-305</p>
+            </div>
+ 
+            <div class="integrante">
+                <h3>Iker Daniel Huerta Hernández</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo: CDIA-305</p>
+            </div>
+ 
+        </div>
+    </section>
+ 
+    <!-- AUDIOS -->
+    <section id="audios">
+        <div class="subtitulo">VOCES DE LA EXPOSICIÓN</div>
+ 
+        <h2>Escucha nuestras participaciones</h2>
+ 
+        <p class="texto">
+            Cada integrante comparte su participación y su
+            perspectiva sobre la exposición.
+        </p>
+ 
+        <div class="audios">
+ 
+            <div class="audio">
+                <h3>Audio 1 — Scott De Los Rios Salinas</h3>
+                <audio controls>
+                    <source src="audios/audio1.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </div>
+ 
+            <div class="audio">
+                <h3>Audio 2 — José Emiliano Gómez Ramírez</h3>
+                <audio controls>
+                    <source src="audios/audio2.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </div>
+ 
+            <div class="audio">
+                <h3>Audio 3 — Iker Daniel Huerta Hernández</h3>
+                <audio controls>
+                    <source src="audios/audio3.mp3" type="audio/mpeg">
+                    Tu navegador no puede reproducir este audio.
+                </audio>
+            </div>
+ 
+        </div>
+    </section>
+ 
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        Exposición artística · CDIA-305
+        <br>
+        Gracias por tomarte el tiempo de observar nuestra obra.
+    </footer>
+ 
+</body>
+</html>
