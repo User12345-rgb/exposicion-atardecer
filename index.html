@@ -2,354 +2,357 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Más allá de una imagen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-    --fondo: #F5F0E8;
-    --seccion: #E9DFD1;
-    --texto: #40352E;
-    --detalle: #846B58;
-    --blanco: #FFFCF7;
-}
+    <title>Más allá de una imagen</title>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        :root {
+            --fondo: #F5F0E8;
+            --seccion: #E9DFD1;
+            --texto: #40352E;
+            --detalle: #846B58;
+            --blanco: #FFFCF7;
+            --cafe: #79543B;
+            --cafe-oscuro: #4E342E;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: Georgia, serif;
-    background-color: var(--fondo);
-    color: var(--texto);
-    line-height: 1.7;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
 
-header {
-    text-align: center;
-    padding: 65px 20px;
-    background-color: var(--seccion);
-}
+        header {
+            text-align: center;
+            padding: 65px 20px;
+            background-color: var(--seccion);
+        }
 
-header .subtitulo {
-    letter-spacing: 4px;
-    font-size: 13px;
-    margin-bottom: 15px;
-}
+        header h1 {
+            font-size: 42px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
 
-header h1 {
-    font-size: 42px;
-    margin-bottom: 12px;
-}
+        header p {
+            font-size: 17px;
+            margin-top: 10px;
+        }
 
-header p {
-    font-size: 17px;
-}
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: var(--cafe-oscuro);
+            padding: 14px;
+            text-align: center;
+        }
 
-nav {
-    background-color: var(--blanco);
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 13px;
+            font-size: 14px;
+        }
 
-nav a {
-    color: var(--texto);
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 14px;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-nav a:hover {
-    color: var(--detalle);
-    text-decoration: underline;
-}
+        section {
+            padding: 45px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-section {
-    padding: 55px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
+        h2 {
+            text-align: center;
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
 
-h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
-}
+        .bienvenida {
+            text-align: center;
+            max-width: 800px;
+        }
 
-h3 {
-    margin-bottom: 12px;
-}
+        .bienvenida p {
+            font-size: 17px;
+        }
 
-p {
-    margin-bottom: 15px;
-}
+        .fotografia {
+            text-align: center;
+        }
 
-.bienvenida {
-    text-align: center;
-    max-width: 750px;
-}
+        .fotografia img {
+            width: 100%;
+            max-width: 850px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+        }
 
-.fotografia {
-    text-align: center;
-}
+        .fotografia p {
+            font-style: italic;
+            margin-top: 12px;
+        }
 
-.fotografia img {
-    width: 100%;
-    max-width: 850px;
-    border-radius: 8px;
-    display: block;
-    margin: auto;
-}
+        .significado {
+            background-color: var(--seccion);
+            border-radius: 12px;
+            padding: 35px;
+        }
 
-.pie-foto {
-    margin-top: 15px;
-    font-style: italic;
-}
+        .significado p {
+            text-align: justify;
+            margin-bottom: 18px;
+        }
 
-.significado {
-    background-color: var(--seccion);
-    max-width: 100%;
-}
+        .integrantes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
 
-.significado-contenido {
-    max-width: 850px;
-    margin: auto;
-}
+        .integrante {
+            background-color: var(--blanco);
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        }
 
-.integrantes {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    text-align: center;
-}
+        .integrante h3 {
+            color: var(--cafe);
+            font-size: 17px;
+        }
 
-.integrante {
-    background-color: var(--blanco);
-    padding: 25px;
-    border-radius: 8px;
-    width: 230px;
-}
+        .integrante p {
+            font-size: 14px;
+        }
 
-.audios {
-    background-color: var(--seccion);
-    max-width: 100%;
-}
+        .audios {
+            background-color: var(--seccion);
+            border-radius: 12px;
+        }
 
-.audios-contenido {
-    max-width: 750px;
-    margin: auto;
-}
+        .audio {
+            background-color: var(--blanco);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 9px;
+        }
 
-.audio {
-    background-color: var(--blanco);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-}
+        .audio h3 {
+            margin-top: 0;
+            font-size: 17px;
+        }
 
-audio {
-    width: 100%;
-    margin-top: 10px;
-}
+        audio {
+            width: 100%;
+        }
 
-/* Apartado del formulario */
+        /* SECCIÓN DEL FORMULARIO */
 
-.formulario {
-    text-align: center;
-    max-width: 750px;
-    padding: 45px 25px;
-    margin: 45px auto;
-    background-color: #E9DFD1;
-    border-radius: 12px;
-}
+        .formulario {
+            text-align: center;
+            max-width: 850px;
+            padding: 45px 25px;
+            margin: 55px auto;
+            background-color: #E9DFD1;
+            border-radius: 15px;
+            border: 2px solid #C5AA91;
+        }
 
-.formulario .boton {
-    display: inline-block;
-    background-color: #795C48;
-    color: #FFFFFF;
-    padding: 13px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 15px;
-    transition: 0.3s;
-    margin-top: 10px;
-}
+        .formulario h2 {
+            margin-bottom: 12px;
+        }
 
-.formulario .boton:hover {
-    background-color: #4E342E;
-}
+        .formulario p {
+            max-width: 600px;
+            margin: 10px auto 25px;
+        }
 
-.nota-formulario {
-    font-size: 12px;
-    margin-top: 15px;
-    color: #796B60;
-}
+        .boton {
+            display: inline-block;
+            background-color: var(--cafe);
+            color: white;
+            padding: 17px 38px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.18);
+            transition: 0.3s;
+        }
 
-footer {
-    background-color: var(--texto);
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
+        .boton:hover {
+            background-color: var(--cafe-oscuro);
+            transform: scale(1.04);
+            box-shadow: 0 7px 17px rgba(0,0,0,0.23);
+        }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 30px;
-    }
+        .nota-formulario {
+            font-size: 13px;
+            margin-top: 20px !important;
+            color: #796B60;
+        }
 
-    nav {
-        padding: 12px 5px;
-    }
+        footer {
+            background-color: var(--cafe-oscuro);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 14px;
+        }
 
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 12px;
-    }
+        @media (max-width: 700px) {
 
-    section {
-        padding: 40px 18px;
-    }
+            header h1 {
+                font-size: 30px;
+            }
 
-    .integrante {
-        width: 100%;
-    }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
 
-    .formulario {
-        margin: 30px 15px;
-        padding: 35px 18px;
-    }
-}
-</style>
+            nav a {
+                margin: 0;
+                font-size: 13px;
+            }
+
+            .integrantes {
+                grid-template-columns: 1fr;
+            }
+
+            .significado {
+                padding: 22px;
+            }
+
+            .boton {
+                width: 100%;
+                max-width: 350px;
+                padding: 17px 15px;
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <p class="subtitulo">EXPOSICIÓN ARTÍSTICA</p>
-    <h1>Más allá de una imagen</h1>
-    <p>Una mirada diferente a nuestro entorno</p>
-</header>
+    <header id="inicio">
+        <h1>Más allá de una imagen</h1>
+        <p>Una mirada diferente a nuestro entorno</p>
+    </header>
 
-<nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#fotografia">Fotografía</a>
-    <a href="#significado">Significado</a>
-    <a href="#integrantes">Integrantes</a>
-    <a href="#audios">Audios</a>
-    <a href="#formulario">Opinión</a>
-</nav>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#fotografia">Fotografía</a>
+        <a href="#significado">Significado</a>
+        <a href="#integrantes">Integrantes</a>
+        <a href="#audios">Audios</a>
+        <a href="#formulario">Opinión</a>
+    </nav>
 
-<section id="inicio" class="bienvenida">
-    <h2>Bienvenidos a nuestra exposición</h2>
-
-    <p>
-        Gracias por visitar este espacio. A través de la fotografía
-        buscamos compartir una perspectiva sobre nuestro entorno,
-        las experiencias que vivimos y las reflexiones que pueden
-        surgir al observar una imagen.
-    </p>
-
-    <p>
-        Te invitamos a recorrer la exposición, escuchar las
-        participaciones de los integrantes y descubrir el mensaje
-        que queremos transmitir.
-    </p>
-</section>
-
-<section id="fotografia" class="fotografia">
-    <h2>Nuestra fotografía</h2>
-
-    <img src="imagenes/foto1.png"
-         alt="Fotografía El atardecer">
-
-    <p class="pie-foto">El atardecer</p>
-</section>
-
-<section id="significado" class="significado">
-    <div class="significado-contenido">
-        <h2>El significado de nuestra fotografía</h2>
+    <section class="bienvenida">
+        <h2>Bienvenidos a nuestra exposición</h2>
 
         <p>
-            La fotografía titulada <em>El atardecer</em> muestra
-            a tres personas contemplando una ciudad durante la
-            puesta de sol. En la imagen destaca el contraste
-            entre la tranquilidad del cielo y la actividad urbana,
-            donde se observan edificios, vehículos y anuncios
-            luminosos.
+            Te invitamos a conocer nuestra fotografía y descubrir
+            el mensaje que buscamos transmitir a través de ella.
+            Cada imagen puede expresar ideas, emociones y distintas
+            formas de observar el mundo que nos rodea.
         </p>
+    </section>
 
-        <p>
-            Esta composición nos invita a reflexionar sobre la
-            relación entre las personas y el entorno que han
-            construido. También permite reconocer algunos
-            problemas de la vida urbana, como la contaminación
-            y el congestionamiento vial, que afectan nuestro
-            ambiente y nuestra calidad de vida.
-        </p>
+    <section id="fotografia" class="fotografia">
+        <h2>Nuestra fotografía</h2>
 
-        <p>
-            Desde la filosofía del arte, podemos relacionar
-            esta imagen con <strong>John Dewey</strong>, quien
-            considera que el arte surge de la experiencia y de
-            la interacción con nuestro entorno. Por otra parte,
-            la fenomenología de <strong>Edmund Husserl</strong>
-            nos ayuda a comprender que cada persona puede
-            observar e interpretar una misma realidad de
-            manera diferente.
-        </p>
+        <img src="imagenes/foto1.png"
+             alt="Fotografía El atardecer">
 
-        <p>
-            En conjunto, la fotografía busca transmitir la
-            importancia de detenernos, observar lo que nos
-            rodea y reflexionar sobre la necesidad de encontrar
-            un equilibrio entre la vida cotidiana y el medio
-            ambiente.
-        </p>
-    </div>
-</section>
+        <p>El atardecer</p>
+    </section>
 
-<section id="integrantes">
-    <h2>Integrantes del equipo</h2>
+    <section id="significado">
+        <div class="significado">
+            <h2>El significado de la imagen</h2>
 
-    <div class="integrantes">
+            <p>
+                La fotografía titulada <strong>El atardecer</strong>
+                muestra a tres personas contemplando una ciudad
+                durante la puesta de sol. En ella podemos observar
+                el contraste entre la tranquilidad del cielo y el
+                movimiento constante de la vida urbana.
+            </p>
 
-        <div class="integrante">
-            <h3>Scott De Los Rios Salinas</h3>
-            <p>Ciencia de Datos e Inteligencia Artificial</p>
-            <p>Grupo 305</p>
+            <p>
+                Esta imagen nos invita a hacer una pausa y reflexionar
+                sobre nuestro entorno. El tráfico, la contaminación
+                y el crecimiento de las ciudades son situaciones que
+                forman parte de nuestra vida cotidiana, pero que
+                muchas veces dejamos de observar.
+            </p>
+
+            <p>
+                Desde la perspectiva de <strong>John Dewey</strong>,
+                el arte puede entenderse como una experiencia que
+                conecta a las personas con su entorno. Por otro lado,
+                las ideas de <strong>Edmund Husserl</strong> nos
+                permiten reflexionar sobre cómo cada persona percibe
+                e interpreta la realidad de manera diferente.
+            </p>
+
+            <p>
+                Con esta fotografía queremos transmitir que debemos
+                aprender a observar lo que sucede a nuestro alrededor
+                y reconocer la importancia de mantener un equilibrio
+                entre nuestras actividades y el medio ambiente.
+            </p>
         </div>
+    </section>
 
-        <div class="integrante">
-            <h3>José Emiliano Gómez Ramírez</h3>
-            <p>Ciencia de Datos e Inteligencia Artificial</p>
-            <p>Grupo 305</p>
+    <section id="integrantes">
+        <h2>Integrantes de la exposición</h2>
+
+        <div class="integrantes">
+
+            <div class="integrante">
+                <h3>Scott De Los Rios Salinas</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo CDIA-305</p>
+            </div>
+
+            <div class="integrante">
+                <h3>José Emiliano Gómez Ramírez</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo CDIA-305</p>
+            </div>
+
+            <div class="integrante">
+                <h3>Iker Daniel Huerta Hernandez</h3>
+                <p>Ciencia de Datos e Inteligencia Artificial</p>
+                <p>Grupo CDIA-305</p>
+            </div>
+
         </div>
+    </section>
 
-        <div class="integrante">
-            <h3>Iker Daniel Huerta Hernandez</h3>
-            <p>Ciencia de Datos e Inteligencia Artificial</p>
-            <p>Grupo 305</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="audios" class="audios">
-    <div class="audios-contenido">
-        <h2>Participaciones en audio</h2>
+    <section id="audios" class="audios">
+        <h2>Escucha nuestras explicaciones</h2>
 
         <div class="audio">
             <h3>Scott De Los Rios Salinas</h3>
@@ -374,35 +377,35 @@ footer {
                 Tu navegador no puede reproducir este audio.
             </audio>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="formulario" class="formulario">
-    <h2>Comparte tu opinión</h2>
+    <section id="formulario" class="formulario">
 
-    <p>
-        Tu opinión es importante para nosotros.
-        Ayúdanos a conocer tu experiencia al visitar
-        esta exposición.
-    </p>
+        <h2>Comparte tu opinión</h2>
 
-    <a class="boton"
-       href="https://docs.google.com/forms/d/e/1FAIpQLScZ-WFpFDPedIeYT7vZm6py0tAS1WOnoW1fJ9ojU0H7-wPLXw/viewform?usp=dialog"
-       target="_blank"
-       rel="noopener noreferrer">
-       Compartir mi opinión →
-    </a>
+        <p>
+            Tu opinión es importante para nosotros.
+            Ayúdanos a conocer tu experiencia al visitar
+            esta exposición.
+        </p>
 
-    <p class="nota-formulario">
-        Tu participación es parte de esta exposición.
-    </p>
-</section>
+        <a class="boton"
+           href="https://docs.google.com/forms/d/e/1FAIpQLScZ-WFpFDPedIeYT7vZm6py0tAS1WOnoW1fJ9ojU0H7-wPLXw/viewform?usp=dialog"
+           target="_blank"
+           rel="noopener noreferrer">
+            COMPARTIR MI OPINIÓN →
+        </a>
 
-<footer>
-    <p>Gracias por visitar nuestra exposición.</p>
-    <p>CONALEP · CDIA-305</p>
-</footer>
+        <p class="nota-formulario">
+            Tu participación es parte de esta exposición.
+        </p>
+
+    </section>
+
+    <footer>
+        <p>Gracias por visitar nuestra exposición.</p>
+        <p>CONALEP · Ciencia de Datos e Inteligencia Artificial · CDIA-305</p>
+    </footer>
 
 </body>
 </html>
-
