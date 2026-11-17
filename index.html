@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Más allá de una imagen</title>
- 
+
 <style>
 :root {
     --fondo: #F5F0E8;
@@ -13,45 +14,45 @@
     --detalle: #846B58;
     --blanco: #FFFCF7;
 }
- 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
- 
+
 html {
     scroll-behavior: smooth;
 }
- 
+
 body {
     font-family: Georgia, serif;
     background-color: var(--fondo);
     color: var(--texto);
     line-height: 1.7;
 }
- 
+
 header {
     text-align: center;
     padding: 65px 20px;
     background-color: var(--seccion);
 }
- 
+
 header .subtitulo {
     letter-spacing: 4px;
     font-size: 13px;
     margin-bottom: 15px;
 }
- 
+
 header h1 {
     font-size: 42px;
     margin-bottom: 12px;
 }
- 
+
 header p {
     font-size: 17px;
 }
- 
+
 nav {
     background-color: var(--blanco);
     padding: 15px;
@@ -60,48 +61,48 @@ nav {
     top: 0;
     z-index: 10;
 }
- 
+
 nav a {
     color: var(--texto);
     text-decoration: none;
     margin: 0 12px;
     font-size: 14px;
 }
- 
+
 nav a:hover {
     color: var(--detalle);
     text-decoration: underline;
 }
- 
+
 section {
     padding: 55px 20px;
     max-width: 1000px;
     margin: auto;
 }
- 
+
 h2 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 25px;
 }
- 
+
 h3 {
     margin-bottom: 12px;
 }
- 
+
 p {
     margin-bottom: 15px;
 }
- 
+
 .bienvenida {
     text-align: center;
     max-width: 750px;
 }
- 
+
 .fotografia {
     text-align: center;
 }
- 
+
 .fotografia img {
     width: 100%;
     max-width: 850px;
@@ -109,22 +110,22 @@ p {
     display: block;
     margin: auto;
 }
- 
+
 .pie-foto {
     margin-top: 15px;
     font-style: italic;
 }
- 
+
 .significado {
     background-color: var(--seccion);
     max-width: 100%;
 }
- 
+
 .significado-contenido {
     max-width: 850px;
     margin: auto;
 }
- 
+
 .integrantes {
     display: flex;
     justify-content: center;
@@ -132,55 +133,69 @@ p {
     gap: 25px;
     text-align: center;
 }
- 
+
 .integrante {
     background-color: var(--blanco);
     padding: 25px;
     border-radius: 8px;
     width: 230px;
 }
- 
+
 .audios {
     background-color: var(--seccion);
     max-width: 100%;
 }
- 
+
 .audios-contenido {
     max-width: 750px;
     margin: auto;
 }
- 
+
 .audio {
     background-color: var(--blanco);
     padding: 20px;
     margin: 15px 0;
     border-radius: 8px;
 }
- 
+
 audio {
     width: 100%;
     margin-top: 10px;
 }
- 
+
+/* Apartado del formulario */
+
 .formulario {
     text-align: center;
     max-width: 750px;
+    padding: 45px 25px;
+    margin: 45px auto;
+    background-color: #E9DFD1;
+    border-radius: 12px;
 }
- 
-.boton {
+
+.formulario .boton {
     display: inline-block;
-    background-color: var(--detalle);
-    color: white;
-    padding: 13px 25px;
-    border-radius: 5px;
+    background-color: #795C48;
+    color: #FFFFFF;
+    padding: 13px 28px;
+    border-radius: 6px;
     text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.formulario .boton:hover {
+    background-color: #4E342E;
+}
+
+.nota-formulario {
+    font-size: 12px;
     margin-top: 15px;
+    color: #796B60;
 }
- 
-.boton:hover {
-    background-color: var(--texto);
-}
- 
+
 footer {
     background-color: var(--texto);
     color: white;
@@ -188,41 +203,46 @@ footer {
     padding: 25px;
     font-size: 14px;
 }
- 
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 30px;
     }
- 
+
     nav {
         padding: 12px 5px;
     }
- 
+
     nav a {
         display: inline-block;
         margin: 5px;
         font-size: 12px;
     }
- 
+
     section {
         padding: 40px 18px;
     }
- 
+
     .integrante {
         width: 100%;
+    }
+
+    .formulario {
+        margin: 30px 15px;
+        padding: 35px 18px;
     }
 }
 </style>
 </head>
- 
+
 <body>
- 
+
 <header>
     <p class="subtitulo">EXPOSICIÓN ARTÍSTICA</p>
     <h1>Más allá de una imagen</h1>
     <p>Una mirada diferente a nuestro entorno</p>
 </header>
- 
+
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#fotografia">Fotografía</a>
@@ -231,37 +251,37 @@ footer {
     <a href="#audios">Audios</a>
     <a href="#formulario">Opinión</a>
 </nav>
- 
+
 <section id="inicio" class="bienvenida">
     <h2>Bienvenidos a nuestra exposición</h2>
- 
+
     <p>
         Gracias por visitar este espacio. A través de la fotografía
         buscamos compartir una perspectiva sobre nuestro entorno,
         las experiencias que vivimos y las reflexiones que pueden
         surgir al observar una imagen.
     </p>
- 
+
     <p>
         Te invitamos a recorrer la exposición, escuchar las
         participaciones de los integrantes y descubrir el mensaje
         que queremos transmitir.
     </p>
 </section>
- 
+
 <section id="fotografia" class="fotografia">
     <h2>Nuestra fotografía</h2>
- 
+
     <img src="imagenes/foto1.png"
          alt="Fotografía El atardecer">
- 
+
     <p class="pie-foto">El atardecer</p>
 </section>
- 
+
 <section id="significado" class="significado">
     <div class="significado-contenido">
         <h2>El significado de nuestra fotografía</h2>
- 
+
         <p>
             La fotografía titulada <em>El atardecer</em> muestra
             a tres personas contemplando una ciudad durante la
@@ -270,7 +290,7 @@ footer {
             donde se observan edificios, vehículos y anuncios
             luminosos.
         </p>
- 
+
         <p>
             Esta composición nos invita a reflexionar sobre la
             relación entre las personas y el entorno que han
@@ -279,7 +299,7 @@ footer {
             y el congestionamiento vial, que afectan nuestro
             ambiente y nuestra calidad de vida.
         </p>
- 
+
         <p>
             Desde la filosofía del arte, podemos relacionar
             esta imagen con <strong>John Dewey</strong>, quien
@@ -290,7 +310,7 @@ footer {
             observar e interpretar una misma realidad de
             manera diferente.
         </p>
- 
+
         <p>
             En conjunto, la fotografía busca transmitir la
             importancia de detenernos, observar lo que nos
@@ -300,55 +320,55 @@ footer {
         </p>
     </div>
 </section>
- 
+
 <section id="integrantes">
     <h2>Integrantes del equipo</h2>
- 
+
     <div class="integrantes">
- 
+
         <div class="integrante">
-            <h3>Scott De Los Rios Salinas</h3>
+            <h3>Nombre del integrante 1</h3>
             <p>Ciencia de Datos e Inteligencia Artificial</p>
             <p>Grupo CDIA-305</p>
         </div>
- 
+
         <div class="integrante">
-            <h3>José Emiliano Gómez Ramírez</h3>
+            <h3>Nombre del integrante 2</h3>
             <p>Ciencia de Datos e Inteligencia Artificial</p>
             <p>Grupo CDIA-305</p>
         </div>
- 
+
         <div class="integrante">
-            <h3>Iker Daniel Huerta Hernandez</h3>
+            <h3>Nombre del integrante 3</h3>
             <p>Ciencia de Datos e Inteligencia Artificial</p>
             <p>Grupo CDIA-305</p>
         </div>
- 
+
     </div>
 </section>
- 
+
 <section id="audios" class="audios">
     <div class="audios-contenido">
         <h2>Participaciones en audio</h2>
- 
+
         <div class="audio">
-            <h3>Scott De Los Rios Salinas</h3>
+            <h3>Nombre del integrante 1</h3>
             <audio controls>
                 <source src="audios/audio1.mp3" type="audio/mpeg">
                 Tu navegador no puede reproducir este audio.
             </audio>
         </div>
- 
+
         <div class="audio">
-            <h3>José Emiliano Gómez Ramírez</h3>
+            <h3>Nombre del integrante 2</h3>
             <audio controls>
                 <source src="audios/audio2.mp3" type="audio/mpeg">
                 Tu navegador no puede reproducir este audio.
             </audio>
         </div>
- 
+
         <div class="audio">
-            <h3>Iker Daniel Huerta Hernandez</h3>
+            <h3>Nombre del integrante 3</h3>
             <audio controls>
                 <source src="audios/audio3.mp3" type="audio/mpeg">
                 Tu navegador no puede reproducir este audio.
@@ -356,30 +376,33 @@ footer {
         </div>
     </div>
 </section>
- 
+
 <section id="formulario" class="formulario">
     <h2>Comparte tu opinión</h2>
- 
+
     <p>
-        Nos interesa conocer tu experiencia al visitar
-        nuestra exposición. Te invitamos a responder
-        el siguiente formulario y compartir tu opinión
-        sobre la fotografía y el mensaje que transmite.
+        Tu opinión es importante para nosotros.
+        Ayúdanos a conocer tu experiencia al visitar
+        esta exposición.
     </p>
- 
-    <p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScZ-WFpFDPedIeYT7vZm6py0tAS1WOnoW1fJ9ojU0H7-wPLXw/viewform?usp=dialog"
-           target="_blank"
-           rel="noopener noreferrer">
-           Responder el formulario aquí
-        </a>
+
+    <a class="boton"
+       href="https://docs.google.com/forms/d/e/1FAIpQLScZ-WFpFDPedIeYT7vZm6py0tAS1WOnoW1fJ9ojU0H7-wPLXw/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener noreferrer">
+       Compartir mi opinión →
+    </a>
+
+    <p class="nota-formulario">
+        Tu participación es parte de esta exposición.
     </p>
 </section>
- 
+
 <footer>
     <p>Gracias por visitar nuestra exposición.</p>
     <p>CONALEP · CDIA-305</p>
 </footer>
- 
+
 </body>
 </html>
+
